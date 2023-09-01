@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Check source directory for uncomitted changes.
+
+find /usr/local/src -type d -name .svn -execdir svn stat \; -print 2> /dev/null | grep -v '^\?' | grep -A 1 -v '^/'
+find /usr/src -type d -name .svn -execdir svn stat \; -print 2> /dev/null | grep -v '^\?' | grep -A 1 -v '^/'
+
